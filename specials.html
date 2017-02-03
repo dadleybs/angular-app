@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+  <title>Randall's Restaurant, Perryopolis PA</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<!-- AngularJS library, app, controller, directive -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="js/randallsApp.js"></script>
+  <script src="js/controllers/MainController.js"></script>
+  <script src="js/directives/specialsInfo.js"></script>
+</head>
+<body id="specials" ng-app="specialsApp">
+  <div id="wrapper">
+    <img id="banner" src="images/banner.png" />
+    <!-- ==== MENU ==== -->	
+    <div id="menu">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="menu.html">menu</a></li>
+        <li class="active"><span class="bo subtitle orange">[</span> <span class="">specials</span> <span class="bo subtitle orange">]</span></li>
+        <li><a href="directions.html">directions</a></li>
+        <li><a href="facts.html">fun facts</a></li>
+      </ul>
+    </div>
+    <!-- ==== MAIN CONTENT ==== -->
+    <div class="main_box" ng-controller="MainController">
+      <div class="aligncenter">
+        <img src="images/specials_title.png" width="360px" alt="Specials" /><br>
+        <nav id="specialsNav" class="{{active}}" ng-click="$event.preventDefault()">
+          <a href="#" class="Sunday" ng-click="active='Sunday'">SUN</a>
+          <a href="#" class="Monday" ng-click="active='Monday'">MON</a>
+          <a href="#" class="Tuesday" ng-click="active='Tuesday'">TUES</a>
+          <a href="#" class="Wednesday" ng-click="active='Wednesday'">WED</a>
+          <a href="#" class="Thursday" ng-click="active='Thursday'">THURS</a>
+          <a href="#" class="Friday" ng-click="active='Friday'">FRI</a>
+          <a href="#" class="Saturday" ng-click="active='Saturday'">SAT</a>
+        </nav>
+        <p class="spec_const"><span class="today">{{active}}'s</span> specials include:</p>
+        <div info="specials[2]">
+          <div ng-repeat="info in day">
+            <h2 class="dish">{{ info.dish }}</h2>
+            <p class="description">{{ info.description }}</p>
+            <p class="price">{{ info.price | currency }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--==============================footer=================================-->
+    <div id="footer">
+      <div class="aligncenter bot-pad2">
+        <img src="images/footer_banner.png" />
+      </div>
+      <p>Official site of Randall's Restaurant &nbsp; &nbsp;|&nbsp; &nbsp;Copyright &copy; 2017 &nbsp; &nbsp;|&nbsp; &nbsp; All Rights Reserved</p>
+    </div>
+  </div>
+</body>
+</html>
