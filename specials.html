@@ -37,7 +37,7 @@
           <a href="#" class="Saturday" ng-click="active='Saturday'">SAT</a>
         </nav>
         <p class="spec_const"><span class="today">{{active}}'s</span> specials include:</p>
-        <div ng-repeat="day in specials track by $index">
+        <div ng-repeat="day in active">
           <h2 class="dish">{{ day.dish }}</h2>
           <p class="description">{{ day.description }}</p>
           <p class="price">{{ day.price | currency }}</p>
