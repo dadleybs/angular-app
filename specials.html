@@ -27,7 +27,7 @@
     <div class="main_box" ng-controller="MainController">
       <div class="aligncenter">
         <img src="images/specials_title.png" width="360px" alt="Specials" /><br>
-        <nav id="specialsNav" class="{{active}}" ng-init="active='{{thisDay | date:'EEEE'}}" ng-click="$event.preventDefault()">
+        <nav id="specialsNav" class="{{active}}" ng-init="active={{thisDay | date:'EEEE'}}" ng-click="$event.preventDefault()">
           <a href="#" class="Sunday" ng-click="active='Sunday'">SUN</a>
           <a href="#" class="Monday" ng-click="active='Monday'">MON</a>
           <a href="#" class="Tuesday" ng-click="active='Tuesday'">TUES</a>
