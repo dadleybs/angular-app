@@ -1,7 +1,9 @@
 // AngularJS file
 
 app.controller('MainController', ['$scope', function($scope) {
-  var thisDay = function() {(new Date()).getDay();}
+  $scope.thisDay = function() {
+    return Date();
+  };
   $scope.specials = {
     Sunday: [
       {
